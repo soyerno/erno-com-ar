@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/banner.svg" alt="erno.com.ar" width="100%">
+</p>
+
 # erno.com.ar
 
 Sitio profesional de **Hernán De Souza** (alias *Erno*), Sr AI Engineer argentino.
