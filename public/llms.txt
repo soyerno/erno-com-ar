@@ -1,0 +1,25 @@
+# Erno — Hernán De Souza
+
+> Sr AI Engineer argentino. Construye software con IA en producción de verdad: agentic coding con Claude Code, pagos agénticos, fintech y producto propio (Firulapp). Voz rioplatense, sin buzzwords, con el código y los errores a la vista.
+
+## Quién
+
+Hernán De Souza, alias Erno. Senior AI Engineer. Argentina. GitHub: https://github.com/SoyErnoModo
+
+## Sobre qué escribe
+
+- Agentic coding en producción: Claude Code (skills, MCP, hooks, worktrees), harness de calidad.
+- AI Engineering aplicada: RAG, agentes, evals, pagos agénticos (ACP/AP2), SEO/GEO para buscadores con IA.
+- Build in public: casos reales documentados (Firulapp, aprendizajes de fintech) con honestidad sobre lo que rompió.
+- Criterio de ingeniería: simplicidad primero, spec-driven development, Software 3.0.
+
+## Casos
+
+- Firulapp (firulapp.com.ar): app de comunidad para dueños de mascotas en Buenos Aires, feed social + Lost & Found con IA. 200+ PRs con Claude Code.
+- IA aplicada en fintech: plataforma, agentes, SEO/GEO, Claude Code en producción.
+- Agentic coding: skills, MCP, hooks y herramientas reutilizables, open source.
+
+## Contacto
+
+- Email: hola@erno.com.ar
+- Sitio: https://erno.com.ar
