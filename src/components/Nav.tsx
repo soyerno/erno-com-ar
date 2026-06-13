@@ -23,7 +23,7 @@ export function Nav() {
             </Link>
           ))}
           <a
-            href="https://github.com/SoyErnoModo"
+            href="https://github.com/soyerno"
             target="_blank"
             rel="noreferrer"
             className="transition-colors hover:text-ink"

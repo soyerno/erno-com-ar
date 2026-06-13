@@ -65,7 +65,10 @@ const personJsonLd = {
     "Next.js",
     "LLMs",
   ],
-  sameAs: ["https://github.com/SoyErnoModo"],
+  sameAs: [
+    "https://github.com/soyerno",
+    "https://www.linkedin.com/in/hdesouza/",
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

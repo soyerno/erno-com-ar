@@ -1,7 +1,6 @@
 <!--
-  PERFIL DE GITHUB — pegá esto en el README.md del repo especial de tu perfil.
-  El repo se llama IGUAL que tu usuario (ej: soyerno/soyerno  o  SoyErnoModo/SoyErnoModo).
-  Reemplazá <USUARIO> por el handle que elijas como canónico.
+  PERFIL DE GITHUB — pegá esto en el README.md del repo soyerno/soyerno (ya existe).
+  El repo de perfil se llama IGUAL que el usuario: soyerno/soyerno.
 -->
 
 # Hola, soy Hernán 👋 — *Erno*
@@ -29,15 +28,15 @@ No prompts mágicos ni demos: agentes, evals, pagos agénticos y **Claude Code e
 
 - 🌐 Sitio: **[erno.com.ar](https://erno.com.ar)**
 - ✉️ Email: **hola@erno.com.ar**
-- 🐦 X: *(pendiente)*
-- 💼 LinkedIn: *(pendiente)*
+- 💼 LinkedIn: **[in/hdesouza](https://www.linkedin.com/in/hdesouza/)**
+- 🐦 X: *(pendiente — definir handle)*
 
 ---
 
-<!-- Stats opcionales — descomentar y reemplazar <USUARIO> -->
+<!-- Stats opcionales — descomentar y reemplazar soyerno -->
 <!--
-![Stats](https://github-readme-stats.vercel.app/api?username=<USUARIO>&show_icons=true&theme=radical&hide_border=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=<USUARIO>&layout=compact&theme=radical&hide_border=true)
+![Stats](https://github-readme-stats.vercel.app/api?username=soyerno&show_icons=true&theme=radical&hide_border=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=soyerno&layout=compact&theme=radical&hide_border=true)
 -->
 
 > *"Mientras otros explican cómo usar IA, yo muestro cómo construir software con IA en producción."*

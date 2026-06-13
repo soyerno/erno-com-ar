@@ -14,7 +14,7 @@ export function Footer() {
           <Link href="/sobre" className="hover:text-ink">Sobre</Link>
           <Link href="/casos" className="hover:text-ink">Casos</Link>
           <Link href="/contacto" className="hover:text-ink">Contacto</Link>
-          <a href="https://github.com/SoyErnoModo" target="_blank" rel="noreferrer" className="hover:text-ink">
+          <a href="https://github.com/soyerno" target="_blank" rel="noreferrer" className="hover:text-ink">
             GitHub
           </a>
         </div>

@@ -36,7 +36,7 @@ export const casos: Caso[] = [
       "Skills de Claude Code, servidores MCP, hooks y un harness de calidad que uso en repos reales. Documentado en público en la bitácora: una historia por feature, lo que funcionó y lo que rompió.",
     stack: ["Claude Code", "MCP", "Hooks", "Skills", "Worktrees"],
     destacado: "Build in public · herramientas reutilizables",
-    link: { href: "https://github.com/SoyErnoModo", label: "GitHub" },
+    link: { href: "https://github.com/soyerno", label: "GitHub" },
   },
 ];
 

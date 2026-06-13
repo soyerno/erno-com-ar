@@ -15,9 +15,15 @@ const canales = [
   },
   {
     label: "GitHub",
-    valor: "@SoyErnoModo",
-    href: "https://github.com/SoyErnoModo",
-    nota: "El código, las skills y la bitácora.",
+    valor: "@soyerno",
+    href: "https://github.com/soyerno",
+    nota: "El código, las skills y los proyectos.",
+  },
+  {
+    label: "LinkedIn",
+    valor: "in/hdesouza",
+    href: "https://www.linkedin.com/in/hdesouza/",
+    nota: "Para temas profesionales, charlas y consultoría.",
   },
 ];
 

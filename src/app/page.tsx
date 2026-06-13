@@ -27,7 +27,7 @@ export default function Home() {
             Ver casos
           </Link>
           <a
-            href="https://github.com/SoyErnoModo"
+            href="https://soyernomodo.github.io/erno-modo/"
             target="_blank"
             rel="noreferrer"
             className="rounded-lg border border-border bg-surface px-5 py-3 text-sm font-600 text-ink transition-colors hover:border-accent"

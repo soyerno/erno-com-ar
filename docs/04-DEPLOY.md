@@ -1,57 +1,57 @@
-# Deploy a erno.com.ar
+# Deploy a erno.com.ar (GitHub Pages)
 
-Repo: **https://github.com/soyerno/erno-com-ar** · branch `main` · build verde (Next 16, estático).
+Repo: **https://github.com/soyerno/erno-com-ar** · branch `main`.
+Deploy automático vía **GitHub Actions** → GitHub Pages. Next configurado como sitio estático (`output: "export"`).
 
-Estos 2 pasos requieren **tus credenciales** (login Vercel + acceso al registrar del dominio), por eso los hacés vos. Tardan ~5 minutos.
-
----
-
-## Paso 1 — Importar el repo a Vercel (login tuyo)
-
-1. Entrá a **https://vercel.com/new** (login con GitHub, cuenta `soyerno`).
-2. Importá el repo **`soyerno/erno-com-ar`**.
-3. Vercel detecta Next.js solo. No toques nada → **Deploy**.
-4. En ~1 min tenés una URL `…vercel.app` funcionando. Ese es el sitio.
-
-> Cada push a `main` redeploya automáticamente.
+Cada push a `main` rebuildea y redeploya solo (workflow `.github/workflows/deploy.yml`).
 
 ---
 
-## Paso 2 — Conectar el dominio erno.com.ar
+## Lo que ya quedó configurado (automático)
 
-1. En el proyecto: **Settings → Domains → Add** → escribí `erno.com.ar`.
-2. Sumá también `www.erno.com.ar` (Vercel redirige www → apex).
-3. Vercel te muestra los **registros DNS exactos**. Copialos tal cual. Suelen ser:
+- `next.config.ts` → `output: "export"` + `trailingSlash` (genera `/sobre/index.html`).
+- Workflow de Actions que hace `npm ci` + `npm run build` + deploy a Pages.
+- `public/CNAME` con `erno.com.ar` (GitHub lo lee para el dominio custom).
+- `public/.nojekyll` (para que sirva la carpeta `_next`).
 
-   | Tipo | Nombre | Valor |
-   |---|---|---|
-   | `A` | `@` (apex) | `76.76.21.21` |
-   | `CNAME` | `www` | `cname.vercel-dns.com` |
+---
 
-   > Usá **los valores que muestre tu dashboard de Vercel**, no estos de memoria, por si cambian.
+## Único paso tuyo: el DNS del dominio
 
-4. Andá al panel DNS de donde compraste **erno.com.ar** (NIC.ar / tu registrar) y cargá esos registros.
-5. Esperá la propagación (minutos a unas horas). Vercel valida y emite el SSL solo.
+GitHub Pages ya queda sirviendo. Falta apuntar **erno.com.ar** a GitHub.
+En el panel DNS de tu registrar (NIC.ar / donde compraste el dominio), cargá:
+
+**Apex (`erno.com.ar`) — 4 registros A:**
+
+| Tipo | Nombre | Valor |
+|---|---|---|
+| `A` | `@` | `185.199.108.153` |
+| `A` | `@` | `185.199.109.153` |
+| `A` | `@` | `185.199.110.153` |
+| `A` | `@` | `185.199.111.153` |
+
+**(Opcional) `www`:**
+
+| Tipo | Nombre | Valor |
+|---|---|---|
+| `CNAME` | `www` | `soyerno.github.io.` |
+
+Luego, en el repo: **Settings → Pages → Custom domain** debe decir `erno.com.ar`
+(ya viene del CNAME). Cuando el DNS propague, tildá **Enforce HTTPS**.
+
+> Propagación: minutos a unas horas. GitHub emite el SSL solo.
 
 ---
 
 ## Verificación
 
-- `https://erno.com.ar` carga el home.
-- `https://erno.com.ar/sitemap.xml` y `/robots.txt` responden.
-- `https://erno.com.ar/llms.txt` visible (para buscadores con IA).
+- URL temporal de Pages mientras propaga el dominio: `https://soyerno.github.io/erno-com-ar/`
+  (con dominio custom, el sitio sirve en la raíz de `erno.com.ar`).
+- `https://erno.com.ar` → home.
+- `https://erno.com.ar/llms.txt` y `/sitemap.xml` → responden.
 
 ---
 
-## Alternativa por CLI (si preferís terminal)
+## Sobre el sitio viejo (soyerno.github.io)
 
-```bash
-export PATH="$HOME/.nvm/versions/node/v22.16.0/bin:$PATH"
-npm i -g vercel
-cd ~/Documents/erno-com-ar
-vercel login          # abre el browser, login tuyo
-vercel --prod         # deploy
-vercel domains add erno.com.ar
-```
-
-El `vercel domains add` te imprime los mismos registros DNS del Paso 2.
+El repo `soyerno/soyerno.github.io` tiene tu portfolio de **2016** (UX/UI dev, MEAN stack) — quedó viejo. Recomendado: retirarlo o reemplazar su contenido por un redirect a `erno.com.ar`. No afecta este deploy.
