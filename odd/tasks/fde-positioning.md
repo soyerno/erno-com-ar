@@ -102,9 +102,9 @@ rewritten in English from the fact sheet.
 
 ## Tasks
 
-- [x] T1 — Site repositioning (content model, pages, nav, footer, metadata, sitemap, llms.txt, README and strategy doc note). Route: delegated direct, one writer (trigger: 2+ non-trivial files, reading that prepares a write). Commit `8eb1883`.
+- [x] T1 — Site repositioning (content model, pages, nav, footer, metadata, sitemap, llms.txt, README and strategy doc note). Route: delegated direct, one writer (trigger: 2+ non-trivial files, reading that prepares a write). Commit `6a54496`.
 - [ ] T2 — Go live on Vercel (owner decision 2026-10-05, replaces GitHub Pages): Vercel project and domains, Cloudflare zone and DNS, NIC.ar delegation, Email Routing for `hola@`, `docs/04-DEPLOY.md`. Route: inline plus browser. Open: NIC.ar delegation and Email Routing (owner), `prompteo` CNAME (owner).
-- [ ] T3 — Merge to `main` and verify production URLs. Owner decision.
+- [x] T3 — Merge to `main` and verify production URLs on Vercel. Commit `7694196`. Custom-domain verification moves to T2.
 
 ## Acceptance criteria
 
@@ -136,6 +136,7 @@ Review mode: receipt-driven development is `off` (global), so no native review i
 
 - 2026-10-05, T1: writer reported `node node_modules/eslint/bin/eslint.js` clean, `npx tsc --noEmit` clean, `npm run build` passing with routes `/`, `/about`, `/contact`, `/projects`. `npm run lint` fails before eslint on a pnpm dependency hook (`ERR_PNPM_IGNORED_BUILDS`) caused by stray untracked pnpm files; not caused by this change. Parent spot check: `npm run build` re-run, passing. Risk assessment `high` with review mode off, so an independent read-only verifier checked every claim against the fact sheet: pass, no findings. Browser readback of home, projects and contact from the static build: rendered as specified.
 - 2026-10-05, T2: Vercel project `erno-com-ar` created and connected to the GitHub repo; `erno.com.ar` and `www.erno.com.ar` assigned to it. Cloudflare zone created on the personal account (free plan) with `A @ 76.76.21.21` and `CNAME www cname.vercel-dns.com`, both DNS only. Assigned nameservers: `nash.ns.cloudflare.com`, `rosalyn.ns.cloudflare.com`. GitHub Pages workflow, `public/CNAME` and `public/.nojekyll` removed. A third record for the pre-existing `prompteo` subdomain was blocked by the permission classifier and left to the owner.
+- 2026-10-05, T3: rebased onto a remote README commit (one conflict in the Deploy line, resolved), rebuilt, pushed `main` at `7694196`. Vercel production deployment Ready. `https://erno-com-ar.vercel.app` returns 200 for `/`, `/projects/`, `/about/`, `/contact/`, `/llms.txt`, `/sitemap.xml` and 404 for `/sobre/`. Cloudflare's nameserver answers `A 76.76.21.21` and `www CNAME cname.vercel-dns.com`. `erno.com.ar` itself still does not resolve: NIC.ar delegation not done.
 
 ## Next step
 
