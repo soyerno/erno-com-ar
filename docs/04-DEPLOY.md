@@ -1,57 +1,65 @@
-# Deploy a erno.com.ar (GitHub Pages)
+# Deploy de erno.com.ar (Vercel + Cloudflare DNS)
 
-Repo: **https://github.com/soyerno/erno-com-ar** · branch `main`.
-Deploy automático vía **GitHub Actions** → GitHub Pages. Next configurado como sitio estático (`output: "export"`).
+Repo: **https://github.com/soyerno/erno-com-ar** · rama de producción `main`.
 
-Cada push a `main` rebuildea y redeploya solo (workflow `.github/workflows/deploy.yml`).
-
----
-
-## Lo que ya quedó configurado (automático)
-
-- `next.config.ts` → `output: "export"` + `trailingSlash` (genera `/sobre/index.html`).
-- Workflow de Actions que hace `npm ci` + `npm run build` + deploy a Pages.
-- `public/CNAME` con `erno.com.ar` (GitHub lo lee para el dominio custom).
-- `public/.nojekyll` (para que sirva la carpeta `_next`).
-
----
-
-## Único paso tuyo: el DNS del dominio
-
-GitHub Pages ya queda sirviendo. Falta apuntar **erno.com.ar** a GitHub.
-En el panel DNS de tu registrar (NIC.ar / donde compraste el dominio), cargá:
-
-**Apex (`erno.com.ar`) — 4 registros A:**
-
-| Tipo | Nombre | Valor |
+| Pieza | Dónde | Qué hace |
 |---|---|---|
-| `A` | `@` | `185.199.108.153` |
-| `A` | `@` | `185.199.109.153` |
-| `A` | `@` | `185.199.110.153` |
-| `A` | `@` | `185.199.111.153` |
+| Hosting | Vercel, proyecto `erno-com-ar` (equipo `hernan-de-souzas-projects`) | Build y deploy en cada push. `main` va a producción; el resto de las ramas genera un preview. |
+| DNS | Cloudflare, zona `erno.com.ar` (cuenta personal, plan gratuito) | Resuelve el dominio hacia Vercel. |
+| Registro | NIC.ar | Delega el dominio a los nameservers de Cloudflare. NIC.ar no aloja registros DNS. |
 
-**(Opcional) `www`:**
+Next está configurado como sitio estático (`output: "export"` en `next.config.ts`); Vercel
+publica la carpeta `out/`. No hay código de servidor.
 
-| Tipo | Nombre | Valor |
-|---|---|---|
-| `CNAME` | `www` | `soyerno.github.io.` |
+## Registros DNS en Cloudflare
 
-Luego, en el repo: **Settings → Pages → Custom domain** debe decir `erno.com.ar`
-(ya viene del CNAME). Cuando el DNS propague, tildá **Enforce HTTPS**.
+Los dos registros van en modo **Solo DNS** (nube gris). Con el proxy de Cloudflare activo,
+Vercel no puede emitir ni renovar el certificado.
 
-> Propagación: minutos a unas horas. GitHub emite el SSL solo.
+| Tipo | Nombre | Valor | Proxy |
+|---|---|---|---|
+| `A` | `@` | `76.76.21.21` | Solo DNS |
+| `CNAME` | `www` | `cname.vercel-dns.com` | Solo DNS |
 
----
+Pendiente: `prompteo.erno.com.ar` está asignado en Vercel al proyecto `claudelingo`. Para
+que resuelva hay que agregar `CNAME prompteo → cname.vercel-dns.com` en modo Solo DNS.
+
+## Delegación en NIC.ar
+
+En Trámites a Distancia → NIC Argentina → `erno.com.ar` → **Delegar**, cargar:
+
+```
+nash.ns.cloudflare.com
+rosalyn.ns.cloudflare.com
+```
+
+La propagación tarda de minutos a algunas horas. Cloudflare avisa por mail cuando la zona
+queda activa y Vercel emite el certificado solo.
+
+## Correo `hola@erno.com.ar`
+
+El sitio usa esa dirección como contacto principal. Mientras no haya registros MX, el
+correo rebota. Con la zona activa: Cloudflare → `erno.com.ar` → Correo electrónico →
+Email Routing → crear la dirección `hola` con destino a la casilla personal y verificar el
+destino desde el mail que envía Cloudflare. Cloudflare agrega los registros MX y SPF.
 
 ## Verificación
 
-- URL temporal de Pages mientras propaga el dominio: `https://soyerno.github.io/erno-com-ar/`
-  (con dominio custom, el sitio sirve en la raíz de `erno.com.ar`).
-- `https://erno.com.ar` → home.
-- `https://erno.com.ar/llms.txt` y `/sitemap.xml` → responden.
+```bash
+dig +short NS erno.com.ar          # nash / rosalyn .ns.cloudflare.com
+dig +short A erno.com.ar           # 76.76.21.21
+curl -sI https://erno.com.ar       # HTTP/2 200
+curl -sI https://www.erno.com.ar   # redirige al dominio raíz
+```
 
----
+También deben responder `https://erno.com.ar/llms.txt` y `https://erno.com.ar/sitemap.xml`.
+La URL de Vercel `https://erno-com-ar.vercel.app` sirve el mismo build sin depender del DNS.
 
-## Sobre el sitio viejo (soyerno.github.io)
+## Historial
 
-El repo `soyerno/soyerno.github.io` tiene tu portfolio de **2016** (UX/UI dev, MEAN stack) — quedó viejo. Recomendado: retirarlo o reemplazar su contenido por un redirect a `erno.com.ar`. No afecta este deploy.
+Hasta el 2026-10-05 el sitio se desplegaba en GitHub Pages con un workflow de Actions. Se
+retiraron el workflow, `public/CNAME` y `public/.nojekyll`. En GitHub, Settings → Pages
+todavía puede figurar el dominio personalizado; conviene desactivar Pages ahí.
+
+El repo `soyerno/soyerno.github.io` conserva un portfolio de 2016. Conviene retirarlo o
+reemplazarlo por un redirect a `erno.com.ar`.
