@@ -4,10 +4,9 @@
 
 # erno.com.ar
 
-Sitio profesional de **Hernán De Souza** (alias *Erno*), Sr AI Engineer argentino.
-Marca personal: AI Engineering aplicada, agentic coding con Claude Code, pagos agénticos.
+Sitio de **Hernán De Souza** (alias *Erno*), AI Engineer en Buenos Aires. Está en inglés y apunta a roles de Forward Deployed Engineer: quién es, qué construyó y cómo contactarlo.
 
-Construido con **Next.js 16** (App Router, React 19, TypeScript) + **Tailwind v4**.
+Construido con **Next.js 16** (App Router, React 19, TypeScript) + **Tailwind v4**, exportado como sitio estático.
 Dark-first, identidad propia (accent violeta `#7c5cff`).
 
 ## Desarrollo
@@ -22,12 +21,12 @@ npm run build    # build de producción
 
 | Ruta | Qué es |
 |---|---|
-| `/` | Home: hero + casos + pilares + CTA. |
-| `/sobre` | Bio, valores de ingeniería, stack. |
-| `/casos` | Portfolio real (Firulapp, fintech, agentic coding). |
-| `/contacto` | Canales. |
+| `/` | Hero con rol buscado, prueba en cuatro datos, cómo trabaja con clientes, proyectos destacados, experiencia reciente y CTA. |
+| `/projects` | Los nueve proyectos agrupados: Products, Agent infrastructure, Open source, Community. |
+| `/about` | Bio, experiencia (más reciente primero), principios de trabajo y stack. |
+| `/contact` | Qué busca y canales: email, LinkedIn, GitHub. |
 
-Contenido editable en `src/lib/content.ts`. SEO/GEO: `robots.ts`, `sitemap.ts`, `public/llms.txt`, JSON-LD `Person` en `layout.tsx`.
+Proyectos, experiencia y datos de contacto se editan en `src/lib/content.ts`; las páginas renderizan desde ahí. SEO/GEO: `robots.ts`, `sitemap.ts`, `public/llms.txt`, JSON-LD `Person` en `layout.tsx`.
 
 ## Estrategia
 
@@ -35,4 +34,4 @@ Docs de marca, arquitectura y plan de contenido en [`docs/`](docs/).
 
 ## Deploy
 
-Vercel + dominio `erno.com.ar`.
+Vercel (export estático) + DNS en Cloudflare + dominio `erno.com.ar`. Ver [`docs/04-DEPLOY.md`](docs/04-DEPLOY.md).

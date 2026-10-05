@@ -1,25 +1,38 @@
-# Erno — Hernán De Souza
+# Hernán De Souza (Erno)
 
-> Sr AI Engineer argentino. Construye software con IA en producción de verdad: agentic coding con Claude Code, pagos agénticos, fintech y producto propio (Firulapp). Voz rioplatense, sin buzzwords, con el código y los errores a la vista.
+> AI Engineer based in Buenos Aires, Argentina (UTC-3), looking for Forward Deployed Engineer roles. I turn business problems into LLM systems in production. Building software professionally since 2010. Works in English and Spanish.
 
-## Quién
+## Who
 
-Hernán De Souza, alias Erno. Senior AI Engineer. Argentina. GitHub: https://github.com/soyerno · LinkedIn: https://www.linkedin.com/in/hdesouza/
+Hernán De Souza, alias Erno. Current role: AI Engineer at MODO, a fintech in Argentina (since Jan 2026). Previously Senior Frontend Developer at MODO (Apr 2024 – Dec 2025). Freelance full-stack developer since Jan 2023.
 
-## Sobre qué escribe
+## What I do
 
-- Agentic coding en producción: Claude Code (skills, MCP, hooks, worktrees), harness de calidad.
-- AI Engineering aplicada: RAG, agentes, evals, pagos agénticos (ACP/AP2), SEO/GEO para buscadores con IA.
-- Build in public: casos reales documentados (Firulapp, aprendizajes de fintech) con honestidad sobre lo que rompió.
-- Criterio de ingeniería: simplicidad primero, spec-driven development, Software 3.0.
+- LLM applications from prompt design to production APIs, using OpenAI, Anthropic and Gemini APIs.
+- Generative Engine Optimization for AI search surfaces, tracked with mention rate, citation share and traffic attribution.
+- Internal AI tools that automate repetitive processes.
+- Agent infrastructure for Claude Code and MCP, published as open source.
 
-## Casos
+## Projects
 
-- Firulapp (firulapp.com.ar): app de comunidad para dueños de mascotas en Buenos Aires, feed social + Lost & Found con IA. 200+ PRs con Claude Code.
-- IA aplicada en fintech: plataforma, agentes, SEO/GEO, Claude Code en producción.
-- Agentic coding: skills, MCP, hooks y herramientas reutilizables, open source.
+- Firulapp (https://firulapp.com.ar): own product built end to end. Community app for pet owners in Buenos Aires with a social feed and an AI-assisted Lost & Found. 200+ pull requests shipped with Claude Code.
+- LLM systems at a fintech: day job at MODO, described in generic terms.
+- Atlantis (https://github.com/soyerno/Atlantis): open-source orchestrator for Claude Code with parallel specialist agents, auditors and judges.
+- Nexo Agent Server (https://github.com/soyerno/nexo-agent-server): durable MCP control plane for networks of AI orchestrators, with a one-command client (https://github.com/soyerno/nexo-agent-client).
+- Claude Code skills marketplace (https://github.com/SoyErnoModo/erno-modo-marketplace): six skills and agents.
+- nestjs-toon (https://github.com/soyerno/nestjs-toon): NestJS interceptor that serializes API responses to TOON to reduce LLM token usage.
+- stripe-plans-importer-nodejs (https://github.com/soyerno/stripe-plans-importer-nodejs): bulk-import Stripe plans from a CSV.
+- Tienda Rápida (https://tiendarapida.vercel.app): free self-hostable online store MVP.
+- Solar34 (https://github.com/soyerno/solar34): solar proposal site for 34 rooftops in a Buenos Aires neighborhood.
 
-## Contacto
+## Pages
+
+- https://erno.com.ar/projects/
+- https://erno.com.ar/about/
+- https://erno.com.ar/contact/
+
+## Contact
 
 - Email: hola@erno.com.ar
-- Sitio: https://erno.com.ar
+- LinkedIn: https://www.linkedin.com/in/hdesouza/
+- GitHub: https://github.com/soyerno

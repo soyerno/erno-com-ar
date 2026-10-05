@@ -1,3 +1,5 @@
+> **Actualización 2026-10-05 — cambio de posicionamiento.** El sitio pasa a ser inglés primero y apunta a roles de Forward Deployed Engineer en empresas globales de IA/SaaS. Se invierte el orden de audiencia: reclutadores y hiring managers primero, comunidad LATAM después. Donde este documento habla de voz rioplatense, build in public o consultoría como objetivo principal, rige el nuevo posicionamiento. El detalle está en `odd/tasks/fde-positioning.md`.
+
 # erno.com.ar — Estrategia de marca personal
 
 > AI Engineer independiente. Voz rioplatense. Sistemas en producción, no tutoriales de juguete.

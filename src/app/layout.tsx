@@ -10,22 +10,27 @@ const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["lati
 
 const SITE = "https://erno.com.ar";
 
+const TITLE = "Hernán De Souza — Forward Deployed AI Engineer";
+const DESCRIPTION =
+  "Hernán De Souza is an AI Engineer in Buenos Aires looking for Forward Deployed Engineer roles. He turns business problems into LLM systems in production and has built software professionally since 2010.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Erno — AI Engineer",
-    template: "%s · Erno",
+    default: TITLE,
+    template: "%s · Hernán De Souza",
   },
-  description:
-    "Construyo software con IA en producción de verdad. Sr AI Engineer argentino: agentic coding con Claude Code, pagos agénticos y producto propio. En rioplatense, con el código y los errores a la vista.",
+  description: DESCRIPTION,
   keywords: [
+    "Forward Deployed Engineer",
+    "Forward Deployed AI Engineer",
     "AI Engineer",
+    "LLM applications",
+    "Generative Engine Optimization",
+    "MCP",
     "Claude Code",
-    "agentic coding",
-    "pagos agénticos",
-    "inteligencia artificial",
-    "Argentina",
     "Next.js",
+    "Buenos Aires",
     "Hernán De Souza",
     "Erno",
   ],
@@ -33,20 +38,18 @@ export const metadata: Metadata = {
   creator: "Hernán De Souza",
   openGraph: {
     type: "website",
-    locale: "es_AR",
+    locale: "en_US",
     url: SITE,
-    siteName: "Erno",
-    title: "Erno — AI Engineer",
-    description:
-      "Cómo se construye software con IA en producción de verdad. En rioplatense, con el código y los errores a la vista.",
+    siteName: "Hernán De Souza",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Erno — AI Engineer",
-    description:
-      "Cómo se construye software con IA en producción de verdad. En rioplatense.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
-  alternates: { canonical: SITE },
+  alternates: { canonical: "/" },
 };
 
 const personJsonLd = {
@@ -55,16 +58,24 @@ const personJsonLd = {
   name: "Hernán De Souza",
   alternateName: "Erno",
   url: SITE,
-  jobTitle: "Senior AI Engineer",
-  nationality: "Argentina",
+  email: "hola@erno.com.ar",
+  jobTitle: "AI Engineer",
+  worksFor: { "@type": "Organization", name: "MODO" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Buenos Aires",
+    addressCountry: "AR",
+  },
   knowsAbout: [
-    "AI Engineering",
-    "Agentic coding",
+    "Forward deployed engineering",
+    "LLM applications",
+    "Generative Engine Optimization",
+    "Model Context Protocol",
     "Claude Code",
-    "Pagos agénticos",
     "Next.js",
-    "LLMs",
+    "TypeScript",
   ],
+  knowsLanguage: ["en", "es"],
   sameAs: [
     "https://github.com/soyerno",
     "https://www.linkedin.com/in/hdesouza/",
@@ -74,7 +85,7 @@ const personJsonLd = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="es-AR"
+      lang="en"
       className={`${inter.variable} ${sora.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

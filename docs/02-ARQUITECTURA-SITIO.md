@@ -24,14 +24,14 @@ erno.com.ar  (NUEVO — portfolio/marca, curado)
 | Ruta | Propósito | Contenido |
 |---|---|---|
 | `/` (home) | Pitch en 5 segundos + prueba + CTA | Hero (quién/qué), 3 casos destacados, últimos escritos, prueba social, CTA contacto. |
-| `/sobre` | Quién es Erno | Bio rioplatense, stack, valores de ingeniería, foto, qué busca (charlas/consultoría). |
-| `/casos` | Portfolio de trabajo real | **Firulapp** (deep dive: app comunidad mascotas + IA Lost&Found, construida con Claude Code), aprendizajes de fintech (genéricos), proyectos OSS. |
+| `/about` | Quién es Erno | Bio rioplatense, stack, valores de ingeniería, foto, qué busca (charlas/consultoría). |
+| `/projects` | Portfolio de trabajo real | **Firulapp** (deep dive: app comunidad mascotas + IA Lost&Found, construida con Claude Code), aprendizajes de fintech (genéricos), proyectos OSS. |
 | `/escritos` (blog) | Long-form aplicado | Artículos por pilar. Puede sindicar/curar desde la bitácora los mejores. |
 | `/recursos` | Lead magnet + autoridad | Skills/herramientas Claude Code descargables, guías, `llms.txt`. (Reusa lo de erno-modo.) |
 | `/bitacora` | Redirige/linkea a erno-modo | Build in public diario. No se duplica acá. |
-| `/contacto` | Conversión | Charlas, consultoría/advisory, redes, email. |
+| `/contact` | Conversión | Charlas, consultoría/advisory, redes, email. |
 
-**MVP (primera versión online):** `/`, `/sobre`, `/casos` (con Firulapp), `/contacto`. El resto se suma incremental.
+**MVP (primera versión online):** `/`, `/about`, `/projects` (con Firulapp), `/contact`. Las rutas se renombraron al inglés el 2026-10-05; los nombres anteriores eran `/sobre`, `/casos` y `/contacto`. El resto se suma incremental.
 
 ---
 
@@ -63,7 +63,7 @@ erno.com.ar  (NUEVO — portfolio/marca, curado)
 
 ```
 ┌────────────────────────────────────────────┐
-│  [Erno]                  sobre casos escritos contacto │
+│  [Erno]                  about projects contact │
 ├────────────────────────────────────────────┤
 │  HERO                                                  │
 │  "Construyo software con IA en producción."            │
@@ -87,6 +87,6 @@ erno.com.ar  (NUEVO — portfolio/marca, curado)
 
 1. Definir identidad visual propia (paleta + tipografías) — doc de diseño.
 2. Scaffold Next 16 en repo nuevo `erno-com-ar`.
-3. Home + /sobre + /casos (Firulapp) — MVP.
+3. Home + /about + /projects (Firulapp) — MVP.
 4. Conectar dominio en Vercel.
 5. Sumar /escritos y /recursos incremental.
