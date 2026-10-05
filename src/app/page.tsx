@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   featuredProjects,
@@ -13,33 +14,45 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-5 pt-16 pb-14 sm:pt-24">
-        <p className="mono mb-5 text-sm text-accent-soft">
-          Forward Deployed Engineer roles · {person.location}
-        </p>
-        <h1 className="font-display text-4xl font-700 leading-[1.05] tracking-tight sm:text-6xl">
-          {person.name}.
-          <br />
-          <span className="text-accent">Forward Deployed AI Engineer.</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          I embed with a team, turn a business problem into an LLM system running in
-          production, and stay until it is measured and handed over. I am an AI Engineer
-          at MODO, a fintech in Argentina, and I have built software professionally
-          since 2010.
-        </p>
-        <div className="mt-9 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="inline-flex min-h-11 items-center rounded-lg bg-accent px-5 text-sm font-600 text-white transition-transform hover:-translate-y-0.5"
-          >
-            Get in touch
-          </Link>
-          <Link
-            href="/projects"
-            className="inline-flex min-h-11 items-center rounded-lg border border-border bg-surface px-5 text-sm font-600 text-ink transition-colors hover:border-accent"
-          >
-            See projects
-          </Link>
+        <div className="flex flex-col-reverse gap-8 sm:flex-row sm:items-center sm:justify-between sm:gap-12">
+          <div>
+            <p className="mono mb-5 text-sm text-accent-soft">
+              Forward Deployed Engineer roles · {person.location}
+            </p>
+            <h1 className="font-display text-4xl font-700 leading-[1.05] tracking-tight sm:text-6xl">
+              {person.name}.
+              <br />
+              <span className="text-accent">Forward Deployed AI Engineer.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+              I embed with a team, turn a business problem into an LLM system running in
+              production, and stay until it is measured and handed over. I am an AI Engineer
+              at MODO, a fintech in Argentina, and I have built software professionally
+              since 2010.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex min-h-11 items-center rounded-lg bg-accent px-5 text-sm font-600 text-white transition-transform hover:-translate-y-0.5"
+              >
+                Get in touch
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex min-h-11 items-center rounded-lg border border-border bg-surface px-5 text-sm font-600 text-ink transition-colors hover:border-accent"
+              >
+                See projects
+              </Link>
+            </div>
+          </div>
+          <Image
+            src={person.photo}
+            alt={`Portrait of ${person.name}`}
+            width={512}
+            height={512}
+            priority
+            className="h-28 w-28 shrink-0 rounded-2xl border border-border object-cover sm:h-52 sm:w-52"
+          />
         </div>
       </section>
 

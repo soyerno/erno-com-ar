@@ -8,12 +8,19 @@ export const person = {
   github: "https://github.com/soyerno",
   location: "Buenos Aires, Argentina",
   timezone: "UTC-3",
+  photo: "/hernan-de-souza.jpg",
 };
 
-export type ProjectGroup = "Products" | "Agent infrastructure" | "Open source" | "Community";
+export type ProjectGroup =
+  | "Products"
+  | "Built for others"
+  | "Agent infrastructure"
+  | "Open source"
+  | "Community";
 
 export const projectGroups: ProjectGroup[] = [
   "Products",
+  "Built for others",
   "Agent infrastructure",
   "Open source",
   "Community",
@@ -52,6 +59,46 @@ export const projects: Project[] = [
     stack: ["OpenAI", "Anthropic", "Gemini", "MCP", "Next.js", "GEO"],
     links: [],
     featured: 2,
+  },
+  {
+    slug: "prompteo",
+    title: "Prompteo",
+    group: "Products",
+    role: "Own product",
+    summary:
+      "Duolingo-style learning app, in Spanish, that teaches people who live off a trade or a small business to use AI without programming. 141 short interactive lessons across 9 courses, with XP, streaks and spaced-repetition review.",
+    stack: ["Next.js", "TypeScript"],
+    links: [{ href: "https://claudelingo-roan.vercel.app", label: "Live app" }],
+  },
+  {
+    slug: "777-en-serie",
+    title: "777 en serie",
+    group: "Built for others",
+    role: "Site and live graphics for a streaming show",
+    summary:
+      "Website for an urban streaming show that broadcasts music, interviews and freestyle battles from San Martín, Buenos Aires, plus a live graphics engine for its broadcasts. The layouts are built in OBS and the on-screen content is driven from the app.",
+    stack: ["TypeScript", "OBS"],
+    links: [{ href: "https://vamosalaire.app", label: "vamosalaire.app" }],
+  },
+  {
+    slug: "dermacare-studio",
+    title: "Dermacare Studio",
+    group: "Built for others",
+    role: "Site and appointment system for a studio",
+    summary:
+      "Website for an aesthetics studio in Buenos Aires, plus a client management and appointment system.",
+    stack: ["Next.js", "Supabase"],
+    links: [{ href: "https://dermacare.ar", label: "dermacare.ar" }],
+  },
+  {
+    slug: "edgar-hernan",
+    title: "Edgar Hernán",
+    group: "Built for others",
+    role: "Artist site and press kit",
+    summary:
+      "Press kit site for a cuarteto singer from Buenos Aires: background, media appearances, live show, repertoire and booking contact.",
+    stack: [],
+    links: [{ href: "https://edgar-hernan.vercel.app", label: "edgar-hernan.vercel.app" }],
   },
   {
     slug: "atlantis",

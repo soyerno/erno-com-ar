@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Nine projects by Hernán De Souza: Firulapp, LLM systems at a fintech, open-source agent infrastructure for Claude Code and MCP, libraries and a community project.",
+    "Projects by Hernán De Souza: own products, LLM systems at a fintech, sites and tools built for others, open-source agent infrastructure for Claude Code and MCP, libraries and a community project.",
   alternates: { canonical: "/projects/" },
 };
 

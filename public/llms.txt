@@ -17,6 +17,10 @@ Hernán De Souza, alias Erno. Current role: AI Engineer at MODO, a fintech in Ar
 
 - Firulapp (https://firulapp.com.ar): own product built end to end. Community app for pet owners in Buenos Aires with a social feed and an AI-assisted Lost & Found. 200+ pull requests shipped with Claude Code.
 - LLM systems at a fintech: day job at MODO, described in generic terms.
+- Prompteo (https://claudelingo-roan.vercel.app): own product. Duolingo-style learning app in Spanish that teaches small-business owners to use AI without programming; 141 lessons across 9 courses.
+- 777 en serie (https://vamosalaire.app): website and live graphics engine for an urban streaming show from San Martín, Buenos Aires.
+- Dermacare Studio (https://dermacare.ar): website plus client management and appointment system for an aesthetics studio in Buenos Aires. Next.js and Supabase.
+- Edgar Hernán (https://edgar-hernan.vercel.app): press kit site for a cuarteto singer from Buenos Aires.
 - Atlantis (https://github.com/soyerno/Atlantis): open-source orchestrator for Claude Code with parallel specialist agents, auditors and judges.
 - Nexo Agent Server (https://github.com/soyerno/nexo-agent-server): durable MCP control plane for networks of AI orchestrators, with a one-command client (https://github.com/soyerno/nexo-agent-client).
 - Claude Code skills marketplace (https://github.com/SoyErnoModo/erno-modo-marketplace): six skills and agents.

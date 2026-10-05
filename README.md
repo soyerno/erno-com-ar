@@ -22,7 +22,7 @@ npm run build    # build de producción
 | Ruta | Qué es |
 |---|---|
 | `/` | Hero con rol buscado, prueba en cuatro datos, cómo trabaja con clientes, proyectos destacados, experiencia reciente y CTA. |
-| `/projects` | Los nueve proyectos agrupados: Products, Agent infrastructure, Open source, Community. |
+| `/projects` | Los proyectos agrupados: Products, Built for others, Agent infrastructure, Open source, Community. |
 | `/about` | Bio, experiencia (más reciente primero), principios de trabajo y stack. |
 | `/contact` | Qué busca y canales: email, LinkedIn, GitHub. |
 
