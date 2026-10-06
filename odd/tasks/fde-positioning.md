@@ -26,7 +26,7 @@ global AI/SaaS companies find him and contact him. Decision recorded 2026-10-05.
 In: copy and information architecture of all pages, project list, SEO/GEO metadata,
 `llms.txt`, route names, docs that describe positioning, DNS + HTTPS + email forwarding.
 
-Out: visual redesign (tokens, fonts and component style stay), blog/MDX, i18n, analytics,
+Out: visual redesign (tokens, fonts and component style stay), blog/MDX, analytics,
 contact form backend, CV PDF (no source file exists).
 
 ## Constraints
@@ -109,6 +109,7 @@ rewritten in English from the fact sheet.
 - [x] T1 — Site repositioning (content model, pages, nav, footer, metadata, sitemap, llms.txt, README and strategy doc note). Route: delegated direct, one writer (trigger: 2+ non-trivial files, reading that prepares a write). Commit `6a54496`.
 - [ ] T2 — Go live on Vercel (owner decision 2026-10-05, replaces GitHub Pages): Vercel project and domains, Cloudflare zone and DNS, NIC.ar delegation, Email Routing for `hola@`, `docs/04-DEPLOY.md`. Route: inline plus browser. Open: NIC.ar delegation and Email Routing (owner), `prompteo` CNAME (owner).
 - [x] T3 — Merge to `main` and verify production URLs on Vercel. Commit `7694196`. Custom-domain verification moves to T2.
+- [x] T4 — Spanish version (owner request 2026-10-06). English stays the default at `/`; Spanish lives under `/es/` (`/es/`, `/es/projects/`, `/es/about/`, `/es/contact/`) with the same facts, a language switch in the nav, per-locale metadata, `hreflang` alternates and sitemap entries. Neutral professional Spanish; "Forward Deployed Engineer" stays in English as the role name. Route: delegated direct, one writer (trigger: 2+ non-trivial files). Branch `feat/es-locale`.
 
 ## Acceptance criteria
 
@@ -119,6 +120,7 @@ rewritten in English from the fact sheet.
   projects listed on `/projects`.
 - T2: Vercel production deployment is READY; `dig NS erno.com.ar` returns Cloudflare nameservers; `https://erno.com.ar` returns
   200 with a valid certificate; mail to `hola@erno.com.ar` is delivered.
+- T4: lint, typecheck and build pass; `out/es/index.html`, `out/es/projects/index.html`, `out/es/about/index.html`, `out/es/contact/index.html` exist with `<html lang="es">`; English pages keep `<html lang="en">`; every page links to its counterpart in the other language; the Spanish pages state the same facts as the English ones and nothing more.
 
 ## Checks
 
@@ -142,6 +144,7 @@ Review mode: receipt-driven development is `off` (global), so no native review i
 - 2026-10-05, T2: Vercel project `erno-com-ar` created and connected to the GitHub repo; `erno.com.ar` and `www.erno.com.ar` assigned to it. Cloudflare zone created on the personal account (free plan) with `A @ 76.76.21.21` and `CNAME www cname.vercel-dns.com`, both DNS only. Assigned nameservers: `nash.ns.cloudflare.com`, `rosalyn.ns.cloudflare.com`. GitHub Pages workflow, `public/CNAME` and `public/.nojekyll` removed. A third record for the pre-existing `prompteo` subdomain was blocked by the permission classifier and left to the owner.
 - 2026-10-05, T3: rebased onto a remote README commit (one conflict in the Deploy line, resolved), rebuilt, pushed `main` at `7694196`. Vercel production deployment Ready. `https://erno-com-ar.vercel.app` returns 200 for `/`, `/projects/`, `/about/`, `/contact/`, `/llms.txt`, `/sitemap.xml` and 404 for `/sobre/`. Cloudflare's nameserver answers `A 76.76.21.21` and `www CNAME cname.vercel-dns.com`. `erno.com.ar` itself still does not resolve: NIC.ar delegation not done.
 - 2026-10-05, owner follow-up: added the LinkedIn profile photo (`public/hernan-de-souza.jpg`, hero, Open Graph, JSON-LD) and four projects named by the owner (Prompteo, 777 en serie, Dermacare Studio, Edgar Hernán) in a new group "Built for others" placed after Products. Facts taken from each live site's title and description and from the repo descriptions. eslint clean, `tsc --noEmit` clean, build passing, browser readback of hero photo and projects page. Open with the owner: whether "Built for others" should read "Client work", and what he wants done with `konsor.com.ar`.
+- 2026-10-06, T4: Spanish version under `/es/`. Two root layouts in route groups `(en)` and `(es)` share one `RootHtml`, so exported pages carry `lang="en"` or `lang="es"` and English URLs are unchanged. Copy lives in `src/lib/copy/{en,es}.ts` typed so a missing translation fails typecheck; shared data stays in `src/lib/content.ts`; pages render from `src/components/pages/*Page.tsx`. Writer reported eslint clean, build passing with eight pages, `tsc --noEmit` clean. Parent spot check: rebuild passing, `lang` and `hrefLang` confirmed in `out/`. Risk assessment `high` with review mode off, so an independent read-only verifier compared Spanish against English entry by entry: pass, no findings. Browser readback of the four Spanish pages. Register is neutral Spanish with tú-form; owner may ask for rioplatense.
 
 ## Next step
 

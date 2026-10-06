@@ -35,6 +35,8 @@ Hernán De Souza, alias Erno. Current role: AI Engineer at MODO, a fintech in Ar
 - https://erno.com.ar/about/
 - https://erno.com.ar/contact/
 
+A Spanish version of this site is available at https://erno.com.ar/es/
+
 ## Contact
 
 - Email: hola@erno.com.ar

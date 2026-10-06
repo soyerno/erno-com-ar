@@ -33,6 +33,8 @@ erno.com.ar  (NUEVO — portfolio/marca, curado)
 
 **MVP (primera versión online):** `/`, `/about`, `/projects` (con Firulapp), `/contact`. Las rutas se renombraron al inglés el 2026-10-05; los nombres anteriores eran `/sobre`, `/casos` y `/contacto`. El resto se suma incremental.
 
+**Idiomas:** inglés es el idioma por defecto y mantiene sus URLs; el español vive bajo `/es/` (`/es/`, `/es/projects/`, `/es/about/`, `/es/contact/`) con los mismos hechos. Cada página enlaza a su equivalente en el otro idioma (selector `ES`/`EN` en el nav y en el footer) y declara `hreflang` (`en`, `es`, `x-default` hacia inglés). "Forward Deployed Engineer" y los títulos de cargo se mantienen en inglés en ambos idiomas.
+
 ---
 
 ## 3. Stack propuesto

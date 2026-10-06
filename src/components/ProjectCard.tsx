@@ -1,4 +1,4 @@
-import type { Project } from "@/lib/content";
+import type { Project } from "@/lib/resolve";
 
 export function Chip({ children }: { children: React.ReactNode }) {
   return (

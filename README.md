@@ -4,7 +4,7 @@
 
 # erno.com.ar
 
-Sitio de **Hernán De Souza** (alias *Erno*), AI Engineer en Buenos Aires. Está en inglés y apunta a roles de Forward Deployed Engineer: quién es, qué construyó y cómo contactarlo.
+Sitio de **Hernán De Souza** (alias *Erno*), AI Engineer en Buenos Aires. Está en inglés (`/`) y tiene versión en español (`/es/`); apunta a roles de Forward Deployed Engineer: quién es, qué construyó y cómo contactarlo.
 
 Construido con **Next.js 16** (App Router, React 19, TypeScript) + **Tailwind v4**, exportado como sitio estático.
 Dark-first, identidad propia (accent violeta `#7c5cff`).
@@ -26,7 +26,7 @@ npm run build    # build de producción
 | `/about` | Bio, experiencia (más reciente primero), principios de trabajo y stack. |
 | `/contact` | Qué busca y canales: email, LinkedIn, GitHub. |
 
-Proyectos, experiencia y datos de contacto se editan en `src/lib/content.ts`; las páginas renderizan desde ahí. SEO/GEO: `robots.ts`, `sitemap.ts`, `public/llms.txt`, JSON-LD `Person` en `layout.tsx`.
+Los datos que no se traducen (slugs, links, stack, fechas, orden) están en `src/lib/content.ts`. Los textos viven en `src/lib/copy/en.ts` y `src/lib/copy/es.ts`, tipados con `Copy` (`types.ts`): si falta una clave en un idioma, no compila. Las cuatro páginas se renderizan desde `src/components/pages/` con un `locale`; las rutas de `src/app/(en)/` y `src/app/(es)/es/` son wrappers de una línea. Cada grupo de rutas tiene su propio root layout (así `<html lang>` es `en` o `es`) y ambos usan `RootHtml`. SEO/GEO: `src/lib/metadata.ts` (canonical, `hreflang`, Open Graph por idioma), `robots.ts`, `sitemap.ts`, `public/llms.txt`, JSON-LD `Person` en `RootHtml.tsx`.
 
 ## Estrategia
 
